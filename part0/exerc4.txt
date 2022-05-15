@@ -1,0 +1,14 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+server saves the posted note in internally.
+end note
+
+server-->browser: 302 Found
+
+note over browser:
+browser is redirected back to the /notes page,
+leading to various subsequent GET requests.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
